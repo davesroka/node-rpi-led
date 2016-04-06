@@ -10,6 +10,7 @@ gpio.setup(pins.button, gpio.DIR_IN);
 gpio.setup(pins.led1, gpio.DIR_OUT);
 
 gpio.on('change', (channel, value) => {
+  console.log('Channel ' + channel + ' value is now ' + value);
   switch (channel) {
     case pins.button:
       gpio.write(pins.led1,1);
