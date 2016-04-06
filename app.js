@@ -1,4 +1,4 @@
-var gpio = require('onoff').Gpio,
+var gpio = require('onoff').Gpio;
 
 var led = new gpio(23, 'out');
 var button = new gpio(21, 'in', 'both');
