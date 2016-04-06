@@ -1,0 +1,25 @@
+{
+  "name": "rpi-node-led",
+  "version": "0.1.0",
+  "description": "Just a quick playtime to light some led's from my Raspberry pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davesroka/rpi-node-led.git"
+  },
+  "author": "Dave Sroka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davesroka/rpi-node-led/issues"
+  },
+  "homepage": "https://github.com/davesroka/rpi-node-led#readme",
+  "dependencies": {
+    "rpi-gpio": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0"
+  }
+}
