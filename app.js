@@ -1,26 +1,14 @@
-var gpio = require('rpi-gpio');
+var gpio = require('onoff').Gpio,
 
-var pins = {
-  led1: 18,
-  led2: 23,
-  button: 21
-}
+var led = new gpio(23, 'out');
+var button = new gpio(21, 'in', 'both');
 
-gpio.setup(pins.button, gpio.DIR_IN);
-gpio.setup(pins.led1, gpio.DIR_OUT);
-
-gpio.on('change', (channel, value) => {
-  console.log('Channel ' + channel + ' value is now ' + value);
-  switch (channel) {
-    case pins.button:
-      gpio.write(pins.led1,1);
+button.watch((err, state)=>{
+  if (state==1){
+    //turn led on
+    led.writeSync(1);
+  } else{
+    //tun led off
+    led.writeSync(0);
   }
 });
-
-function readButton() {
-  gpio.read(pins.button, (err, value) => {
-    console.log(`Button pushed value: ${value}`);
-
-  });
-}
-

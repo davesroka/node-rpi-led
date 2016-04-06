@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/davesroka/rpi-node-led#readme",
   "dependencies": {
-    "rpi-gpio": "^0.7.0"
+    "onoff": "^1.0.4"
   },
   "devDependencies": {
     "eslint": "^2.7.0"
