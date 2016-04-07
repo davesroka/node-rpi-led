@@ -5,7 +5,7 @@ var button = new gpio(21, 'in', 'both');
 
 // define the callback function
 function light(err, state) {
-  
+	console.log('Button Pressed'); 	 
   // check the state of the button
   // 1 == pressed, 0 == not pressed
   if(state == 1) {
