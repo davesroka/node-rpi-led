@@ -1,10 +1,11 @@
 var gpio = require('onoff').Gpio;
 
-var led = new gpio(23, 'out');
+var led = new gpio(18, 'out');
 var button = new gpio(21, 'in', 'both');
 
 // define the callback function
 function light(err, state) {
+  console.log('Button pushed');
   
   // check the state of the button
   // 1 == pressed, 0 == not pressed
