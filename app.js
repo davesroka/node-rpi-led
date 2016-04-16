@@ -2,23 +2,17 @@ var gpio = require('onoff').Gpio;
 var red = new gpio(16, 'out');
 var green = new gpio(12, 'out');
 var blue = new gpio(21, 'out');
-var button = new gpio(25, 'in', 'both');
-var express = require('express');
-var app = express();
-
-app.get('/', function(req, res){
-  res.send('Hi I changed this again!');
-});
-
-app.get('/button', function(req,res){
-  res.send('Button pushed');
-});
+var button = new gpio(19, 'in', 'both');
+var app = require('express').createServer();
+var io = require('socket.io')(server);
 
 app.listen(3001, function(){
   console.log('App listening on port 3001!');
 });
 
-
+app.get('/', function(req, res){
+  res.sendfile(__dirname + '/index.html');
+});
 
 // define the callback function
 function light(err, state) {
