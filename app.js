@@ -1,7 +1,9 @@
 var gpio = require('onoff').Gpio;
 
-var led = new gpio(18, 'out');
-var button = new gpio(21, 'in', 'both');
+var red = new gpio(16, 'out');
+var green = new gpio(12, 'out');
+var blue = new gpio(21, 'out');
+var button = new gpio(25, 'in', 'both');
 
 // define the callback function
 function light(err, state) {
@@ -12,10 +14,14 @@ function light(err, state) {
   // 1 == pressed, 0 == not pressed
   if(state == 1) {
     // turn LED on
-    led.writeSync(1);
+    red.writeSync(1);
+    gree.writeSync(1);
+    blue.writeSync(1);
   } else {
     // turn LED off
-    led.writeSync(0);
+    red.writeSync(0);
+    gree.writeSync(0);
+    blue.writeSync(0)
   }
   
 }
