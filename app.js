@@ -10,8 +10,8 @@ app.get('/', function(req, res){
   res.send('Hi I changed this again!');
 });
 
-app.listen(3000, function(){
-  console.log('App listening on port 3000!');
+app.listen(3001, function(){
+  console.log('App listening on port 3001!');
 })
 // define the callback function
 function light(err, state) {
