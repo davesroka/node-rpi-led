@@ -1,10 +1,18 @@
 var gpio = require('onoff').Gpio;
-
 var red = new gpio(16, 'out');
 var green = new gpio(12, 'out');
 var blue = new gpio(21, 'out');
 var button = new gpio(25, 'in', 'both');
+var express = require('express');
+var app = express();
 
+app.get('/', function(req, res){
+  res.send('Hello World!');
+});
+
+app.listen(3000, function(){
+  console.log('App listening on port 3000!');
+})
 // define the callback function
 function light(err, state) {
   
