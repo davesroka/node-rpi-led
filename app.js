@@ -10,9 +10,15 @@ app.get('/', function(req, res){
   res.send('Hi I changed this again!');
 });
 
+app.get('/button', function(req,res){
+  res.send('Button pushed');
+})
+
 app.listen(3001, function(){
   console.log('App listening on port 3001!');
 })
+
+
 // define the callback function
 function light(err, state) {
   
