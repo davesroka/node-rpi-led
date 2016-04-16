@@ -3,7 +3,8 @@ var red = new gpio(16, 'out');
 var green = new gpio(12, 'out');
 var blue = new gpio(21, 'out');
 var button = new gpio(19, 'in', 'both');
-var app = require('express').createServer();
+var app = require('express')();
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 app.listen(3001, function(){
