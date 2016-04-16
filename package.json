@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/davesroka/rpi-node-led#readme",
   "dependencies": {
-    "onoff": "^1.0.4"
+    "onoff": "^1.0.4",
+    "express": "^4.13.4"
   },
   "devDependencies": {
     "eslint": "^2.7.0",
-    "express": "^4.13.4"
+    
   }
 }
