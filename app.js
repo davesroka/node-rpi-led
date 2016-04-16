@@ -5,6 +5,7 @@ var button = new gpio(21, 'in', 'both');
 
 // define the callback function
 function light(err, state) {
+  
   console.log('Button pushed');
   
   // check the state of the button
