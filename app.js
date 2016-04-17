@@ -2,7 +2,7 @@ var gpio = require('onoff').Gpio;
 var red = new gpio(16, 'out');
 var green = new gpio(12, 'out');
 var blue = new gpio(21, 'out');
-var button = new gpio(19, 'in', 'both');
+var button = new gpio(23, 'in', 'both');
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -22,10 +22,11 @@ app.get('/on', function (req, res) {
   blue.writeSync(1);
 });
 
-app.get('/off', function(req,res){
-   red.writeSync(0);
-   green.writeSync(0);
-   blue.writeSync(0)
+app.get('/off', function (req, res) {
+  res.send('Lights off!');
+  red.writeSync(0);
+  green.writeSync(0);
+  blue.writeSync(0)
 })
 
 // define the callback function
